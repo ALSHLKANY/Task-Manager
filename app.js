@@ -1,6 +1,6 @@
 const path = require("path");
 const express = require("express");
-const tasksRoutes = require("./routs/tasksRoutes");
+const tasksRoutes = require("./routes/tasksRoutes");
 const appError = require("./utils/appError");
 const errorHandler = require("./utils/errorHandler");
 const app = express();
@@ -9,10 +9,6 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
 //routes
-
-app.get("/hello", (req, res) => {
-  res.send("Task maneger");
-});
 
 app.use("/api/v1/tasks", tasksRoutes);
 
